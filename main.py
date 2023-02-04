@@ -12,8 +12,9 @@ class App(QMainWindow):
     def __init__(self):
         super(App, self).__init__()
         destopSize = QDesktopWidget().screenGeometry()
-        w, h = destopSize.width(), destopSize.height()
-        self.setGeometry(w / 2 - 300, h / 2 - 250, 700, 500)
+        w = 2000
+        h = 1000
+        self.setGeometry(int(w / 2 - 300), int(h / 2 - 250), 700, 500)
         self.setWindowTitle("Face Detection")
 
         self.table_widget = MyTableWidget(self)
@@ -147,7 +148,7 @@ class MyTableWidget(QWidget):
         self.turnOffButton.clicked.connect(self.turnOff)
         self.turnOnButton = QPushButton("Cancel", self.tabWebcam)
         self.turnOnButton.setGeometry(QRect(600, 400, 80, 30))
-        self.turnOnButton.clicked.connect(self.turnCancel)
+        # self.turnOnButton.clicked.connect(self.turnCancel)
         # END WEBCAM TAB
 
         # Add tabs to widget
